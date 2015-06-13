@@ -198,6 +198,7 @@
      </RelativeLayout>
 
 
+
          <ListView
              android:layout_width="match_parent"
              android:layout_height="wrap_content" android:id="@+id/lview"
@@ -206,6 +207,5 @@
              android:dividerHeight="0.6dp"
              android:layout_below="@+id/profilebox"
              ></ListView>
-
 
 </RelativeLayout>

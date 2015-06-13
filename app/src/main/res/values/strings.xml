@@ -8,5 +8,12 @@
     <string name="menu_timeline">Timeline</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_account">Account</string>
+    <string name="text_chooese_country">Choose a country</string>
+    
+    <string-array name="mCategoryList">
+        <item>Business</item>
+        <item>Social</item>
+        <item>Marketing</item>
+    </string-array>
 
 </resources>

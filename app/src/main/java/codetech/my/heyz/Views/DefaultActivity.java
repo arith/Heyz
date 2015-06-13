@@ -36,7 +36,6 @@ public class DefaultActivity extends ActionBarActivity {
                 .add(R.string.menu_home, HomeFragment.class)
                 .add(R.string.menu_timeline, TimeLineFragment.class)
                 .add(R.string.menu_profile, ProfileFragment.class)
-                .add(R.string.menu_account, HomeFragment.class)
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

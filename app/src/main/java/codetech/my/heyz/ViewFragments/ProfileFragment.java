@@ -1,11 +1,13 @@
 package codetech.my.heyz.ViewFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -19,6 +21,7 @@ import codetech.my.heyz.Adapter.TimelinePersonAdapter;
 import codetech.my.heyz.Adapter.TimelinePersonArray;
 import codetech.my.heyz.Factory.DefaultFactory;
 import codetech.my.heyz.R;
+import codetech.my.heyz.Views.CreatePostActivity;
 
 /**
  * Created by kamarulzaman on 6/13/15.
@@ -46,6 +49,13 @@ public class ProfileFragment extends Fragment {
 
         adapter = new ProfileTimeLineAdapter(getActivity(), items);
         lview.setAdapter(adapter);
+        Button mButton = (Button) v.findViewById(R.id.addHeyz);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CreatePostActivity.class));
+            }
+        });
 
         return v;
     }

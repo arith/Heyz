@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/defaultwallpaper2"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mMyBox"
+        android:padding="10dp"
+        android:layout_margin="6dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/heyz"
+            android:id="@+id/banner"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textStyle="bold"
+            />
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mCategory"
+            android:entries="@array/mCategoryList"
+            android:prompt="@string/text_chooese_country"
+            android:background="@drawable/defaultinput"
+            android:textColor="#80FFFFFF"
+            android:textColorHint="#F2FFFFFF"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:id="@+id/mStatus"
+            android:background="@drawable/defaultinput"
+            android:textColor="#80FFFFFF"
+            android:hint="Looking for some marketing plan..."
+            android:textColorHint="#80FFFFFF"
+            android:paddingBottom="10dp"
+            />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Create new post"
+            android:id="@+id/BtnsignIn"
+            android:background="@drawable/defaultbutton"
+            android:textColor="#B3ffffff"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
