@@ -125,7 +125,7 @@
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="60dp"
-                android:background="#ffffff"
+                android:background="#009688"
                 android:padding="10dp"
                 android:layout_marginLeft="10dp"
                 android:paddingLeft="20dp"
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:text="1512"
                     android:textSize="14dp"
-                    android:textColor="#80000000"
+                    android:textColor="#FFFFFF"
                     android:id="@+id/mTotalInterestCount"
                     />
 
@@ -150,12 +150,13 @@
                     android:layout_height="wrap_content"
                     android:text="Interest"
                     android:textSize="13dp"
-                    android:textColor="#546e7a"
+                    android:textColor="#F2FFFFFF"
                     android:textStyle="bold"
                     android:layout_below="@+id/mTotalInterestCount"
                     />
 
             </RelativeLayout>
+
 
             <RelativeLayout
                 android:layout_width="100dp"

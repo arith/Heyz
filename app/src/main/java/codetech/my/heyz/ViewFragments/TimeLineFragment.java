@@ -10,14 +10,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import codetech.my.heyz.Adapter.TimelinePersonAdapter;
 import codetech.my.heyz.Adapter.TimelinePersonArray;
+import codetech.my.heyz.Factory.DefaultFactory;
 import codetech.my.heyz.R;
 import codetech.my.heyz.Views.CreatePostActivity;
 import codetech.my.heyz.Views.UserProfileActivity;
@@ -36,21 +48,50 @@ public class TimeLineFragment extends Fragment {
         View v = (View) inflater.inflate(R.layout.timelinefragmentactivity, container, false);
         lview = (ListView) v.findViewById(R.id.lview);
 
-        items.add(new TimelinePersonArray("1", "Ahmad Said", "Saya suka makan ayam goreng", "http://images.huffingtonpost.com/2013-06-15-moviesmanofsteelhenrycavillsuperman.jpg", "12:02 PM", "10m", true));
-        items.add(new TimelinePersonArray("1", "Ahmad Said", "Saya suka makan ayam goreng", "http://images.huffingtonpost.com/2013-06-15-moviesmanofsteelhenrycavillsuperman.jpg", "12:02 PM", "120m", true));
-        items.add(new TimelinePersonArray("1", "Ahmad Said", "Saya suka makan ayam goreng", "http://images.huffingtonpost.com/2013-06-15-moviesmanofsteelhenrycavillsuperman.jpg", "12:02 PM", "100km", true));
-        items.add(new TimelinePersonArray("1", "Ahmad Said", "Saya suka makan ayam goreng", "http://images.huffingtonpost.com/2013-06-15-moviesmanofsteelhenrycavillsuperman.jpg", "12:02 PM", "22km", true));
-        items.add(new TimelinePersonArray("1", "Ahmad Said", "Saya suka makan ayam goreng", "http://images.huffingtonpost.com/2013-06-15-moviesmanofsteelhenrycavillsuperman.jpg", "12:02 PM", "14km", true));
-        items.add(new TimelinePersonArray("1", "Ahmad Said", "Saya suka makan ayam goreng", "http://images.huffingtonpost.com/2013-06-15-moviesmanofsteelhenrycavillsuperman.jpg", "12:02 PM", "120m", true));
-
-        adapter = new TimelinePersonAdapter(getActivity(), items);
-        lview.setAdapter(adapter);
-        lview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.add("auth", "abc123");
+        params.add("method", "getmap2");
+        client.post(DefaultFactory.mApiUrl, params, new JsonHttpResponseHandler() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getActivity(), UserProfileActivity.class));
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try{
+                    if(response.getBoolean("response")) {
+                        JSONArray jarray = response.getJSONArray("data");
+                        if(jarray.length() > 0) {
+                            for(int i = 0; i < jarray.length(); i++)
+                            {
+                                JSONObject jobject = jarray.getJSONObject(i);
+                                items.add(new TimelinePersonArray("1", jobject.getString("fullname"), jobject.getString("status"), jobject.getString("avatar"), jobject.getString("datetime"), jobject.getString("distance"), true));
+                            }
+                            adapter = new TimelinePersonAdapter(getActivity(), items);
+                            lview.setAdapter(adapter);
+                            lview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    startActivity(new Intent(getActivity(), UserProfileActivity.class));
+                                }
+                            });
+
+                        } else {
+                            Toast.makeText(getActivity(), "No interest people found nearby", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(getActivity(), "No interest people found nearby", Toast.LENGTH_SHORT).show();
+                    }
+                } catch(Exception e) {
+                    Toast.makeText(getActivity(), "Getting nearby interest failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(getActivity(), "Getting nearby interest failed", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         return v;
     }
