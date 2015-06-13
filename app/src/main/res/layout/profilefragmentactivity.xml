@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/defaultwallpaper"
+        android:id="@+id/profilebox"
+        android:paddingTop="14dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profilefield"
+            >
+
+         <ImageView android:layout_width="80dp" android:layout_height="80dp"
+             android:layout_margin="10dp"
+             android:id="@+id/mAvatar"
+             android:layout_alignParentLeft="true"
+             android:src="@drawable/ic_launcher"
+         />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="20sp"
+             android:textColor="#F2FFFFFF"
+             android:text="Example Person"
+             android:layout_toRightOf="@+id/mAvatar"
+             android:layout_alignBaseline="@+id/mAvatar"
+             android:layout_marginTop="7dp"
+             android:id="@+id/mName"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor isit emet"
+            android:id="@+id/mStatus"
+            android:layout_below="@+id/mName"
+            android:textColor="#80FFFFFF"
+            android:textSize="16dp"
+            android:layout_toRightOf="@+id/mAvatar"
+            />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="Add To Friend"
+                android:background="#009688"
+                android:layout_below="@+id/mStatus"
+                android:textSize="13dp"
+                android:padding="8dp"
+                android:layout_toRightOf="@+id/mAvatar"
+                android:textColor="#F2FFFFFF"
+                android:layout_marginTop="4dp"
+                android:id="@+id/addHeyz"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="Add To Friend"
+                android:background="#009688"
+                android:layout_below="@+id/mStatus"
+                android:textSize="13dp"
+                android:padding="8dp"
+                android:layout_toRightOf="@+id/mAvatar"
+                android:textColor="#80FFFFFF"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                android:id="@+id/callHeyz"
+                />
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profilefield"
+            android:layout_marginTop="30dp"
+            android:id="@+id/mHeyz"
+            android:layout_marginRight="8dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/mHeyzBox"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10000"
+                    android:textSize="14dp"
+                    android:textColor="#80000000"
+                    android:id="@+id/mTotalHeyCount"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friends"
+                    android:textSize="13dp"
+                    android:textColor="#546e7a"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/mTotalHeyCount"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_toRightOf="@+id/mHeyzBox"
+                android:layout_marginRight="6dp"
+                android:id="@+id/mInterestBox"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1512"
+                    android:textSize="14dp"
+                    android:textColor="#80000000"
+                    android:id="@+id/mTotalInterestCount"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Interest"
+                    android:textSize="13dp"
+                    android:textColor="#546e7a"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/mTotalInterestCount"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_toRightOf="@+id/mInterestBox"
+                android:layout_marginRight="6dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1512"
+                    android:textSize="14dp"
+                    android:textColor="#80000000"
+                    android:id="@+id/mTotalRatingCount"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ratings"
+                    android:textSize="13dp"
+                    android:textColor="#546e7a"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/mTotalRatingCount"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+     </RelativeLayout>
+
+
+         <ListView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" android:id="@+id/lview"
+             android:background="#fff"
+             android:divider="#f4f4f4"
+             android:dividerHeight="0.6dp"
+             android:layout_below="@+id/profilebox"
+             ></ListView>
+
+
+</RelativeLayout>
