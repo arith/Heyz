@@ -63,14 +63,17 @@ public class TimeLineFragment extends Fragment {
                             for(int i = 0; i < jarray.length(); i++)
                             {
                                 JSONObject jobject = jarray.getJSONObject(i);
-                                items.add(new TimelinePersonArray("1", jobject.getString("fullname"), jobject.getString("status"), jobject.getString("avatar"), jobject.getString("datetime"), jobject.getString("distance"), true));
+                                items.add(new TimelinePersonArray(jobject.getString("userid"), jobject.getString("fullname"), jobject.getString("status"), jobject.getString("avatar"), jobject.getString("datetime"), jobject.getString("distance"), true));
                             }
                             adapter = new TimelinePersonAdapter(getActivity(), items);
                             lview.setAdapter(adapter);
                             lview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                 @Override
                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                    startActivity(new Intent(getActivity(), UserProfileActivity.class));
+                                    TimelinePersonArray item = items.get(position);
+                                    Intent myIntent = new Intent(getActivity(), UserProfileActivity.class);
+                                    myIntent.putExtra("userid", item.getmId());
+                                    startActivity(myIntent);
                                 }
                             });
 

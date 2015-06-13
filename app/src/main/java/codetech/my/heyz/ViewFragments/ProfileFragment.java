@@ -70,7 +70,7 @@ public class ProfileFragment extends Fragment {
                             for(int i = 0; i < jarray.length(); i++)
                             {
                                 JSONObject jobject = jarray.getJSONObject(i);
-                                items.add(new ProfileTimeLineArray("1", jobject.getString("fullname"), jobject.getString("status"), jobject.getString("avatar"), jobject.getString("posttime"), true));
+                                items.add(new ProfileTimeLineArray(jobject.getString("userid"), jobject.getString("fullname"), jobject.getString("status"), jobject.getString("avatar"), jobject.getString("posttime"), true));
                             }
                             adapter = new ProfileTimeLineAdapter(getActivity(), items);
                             lview.setAdapter(adapter);
@@ -134,7 +134,7 @@ public class ProfileFragment extends Fragment {
         });
 
         Button addHeyz = (Button) v.findViewById(R.id.addHeyz);
-        addHeyz.setText("Account Settings");
+        addHeyz.setText("Post new interest");
 
         adapter = new ProfileTimeLineAdapter(getActivity(), items);
         lview.setAdapter(adapter);
