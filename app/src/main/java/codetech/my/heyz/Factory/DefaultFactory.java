@@ -10,6 +10,9 @@ import com.squareup.picasso.Transformation;
  */
 public class DefaultFactory {
 
+    public static final String mMyPhoneNumber = "+601546010184";
+    public static final String mMyPassword = "Huawei1234";
+
     public static final Transformation default_transformation = new RoundedTransformationBuilder()
             .borderColor(Color.BLACK)
             .borderWidthDp(0)

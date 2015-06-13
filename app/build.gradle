@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "codetech.my.heyz"
-        minSdkVersion 9
+        minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -32,4 +32,6 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.makeramen:roundedimageview:2.0.1'
     compile 'com.melnykov:floatingactionbutton:1.3.0'
+    compile files('libs/android-support-v4.jar')
+    //xxxxcompile files('libs/sa_base.jar')
 }

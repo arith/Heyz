@@ -74,7 +74,6 @@ public class TimelinePersonAdapter extends BaseAdapter {
                 holder.mAvatar.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_launcher));
                 holder.mDateTime.setText(item.getDateTime());
                 holder.mDistance.setText(item.getDistance());
-
                 Picasso.with(context).load(item.getAvatar()).fit() .transform(DefaultFactory.default_transformation).into(holder.mAvatar);
 
                 return convertView;

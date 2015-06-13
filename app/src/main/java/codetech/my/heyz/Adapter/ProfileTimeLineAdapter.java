@@ -1,6 +1,7 @@
 package codetech.my.heyz.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,6 +67,7 @@ public class ProfileTimeLineAdapter extends BaseAdapter {
                 holder.mStatus = (TextView) convertView.findViewById(R.id.mStatus);
                 holder.mAvatar = (ImageView) convertView.findViewById(R.id.mAvatar);
                 holder.mDateTime = (TextView) convertView.findViewById(R.id.mDateTime);
+                holder.mRate = (TextView) convertView.findViewById(R.id.mButtonRate);
 
                 holder.mId.setText(item.getmId());
                 holder.mName.setText(item.getName());
@@ -74,7 +76,10 @@ public class ProfileTimeLineAdapter extends BaseAdapter {
                 holder.mDateTime.setText(item.getDateTime());
 
                 if(item.getisArchive()) {
-
+                    holder.mRate.setVisibility(View.GONE);
+                } else {
+                    holder.mRate.setVisibility(View.GONE);
+                    holder.mRate.setVisibility(View.VISIBLE);
                 }
 
                 Picasso.with(context).load(item.getAvatar()).fit() .transform(DefaultFactory.default_transformation).into(holder.mAvatar);
@@ -94,6 +99,7 @@ public class ProfileTimeLineAdapter extends BaseAdapter {
         TextView mName;
         TextView mStatus;
         TextView mDateTime;
+        TextView mRate;
         ImageView mAvatar;
     }
 }

@@ -16,35 +16,35 @@
             android:id="@+id/profilefield"
             >
 
-         <ImageView android:layout_width="80dp" android:layout_height="80dp"
-             android:layout_margin="10dp"
-             android:id="@+id/mAvatar"
-             android:layout_alignParentLeft="true"
-             android:src="@drawable/ic_launcher"
-         />
+            <ImageView android:layout_width="80dp" android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:id="@+id/mAvatar"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_launcher"
+                />
 
-         <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:textSize="20sp"
-             android:textColor="#F2FFFFFF"
-             android:text="Example Person"
-             android:layout_toRightOf="@+id/mAvatar"
-             android:layout_alignBaseline="@+id/mAvatar"
-             android:layout_marginTop="7dp"
-             android:id="@+id/mName"
-             />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#F2FFFFFF"
+                android:text="Example Person"
+                android:layout_toRightOf="@+id/mAvatar"
+                android:layout_alignBaseline="@+id/mAvatar"
+                android:layout_marginTop="7dp"
+                android:id="@+id/mName"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor isit emet"
-            android:id="@+id/mStatus"
-            android:layout_below="@+id/mName"
-            android:textColor="#80FFFFFF"
-            android:textSize="16dp"
-            android:layout_toRightOf="@+id/mAvatar"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor isit emet"
+                android:id="@+id/mStatus"
+                android:layout_below="@+id/mName"
+                android:textColor="#80FFFFFF"
+                android:textSize="16dp"
+                android:layout_toRightOf="@+id/mAvatar"
+                />
 
 
             <Button
@@ -125,7 +125,7 @@
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="60dp"
-                android:background="#ffffff"
+                android:background="#009688"
                 android:padding="10dp"
                 android:layout_marginLeft="10dp"
                 android:paddingLeft="20dp"
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:text="1512"
                     android:textSize="14dp"
-                    android:textColor="#80000000"
+                    android:textColor="#FFFFFF"
                     android:id="@+id/mTotalInterestCount"
                     />
 
@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:text="Interest"
                     android:textSize="13dp"
-                    android:textColor="#546e7a"
+                    android:textColor="#F2FFFFFF"
                     android:textStyle="bold"
                     android:layout_below="@+id/mTotalInterestCount"
                     />
@@ -195,17 +195,17 @@
 
 
 
-     </RelativeLayout>
+    </RelativeLayout>
 
 
 
-         <ListView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content" android:id="@+id/lview"
-             android:background="#fff"
-             android:divider="#f4f4f4"
-             android:dividerHeight="0.6dp"
-             android:layout_below="@+id/profilebox"
-             ></ListView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/lview"
+        android:background="#fff"
+        android:divider="#f4f4f4"
+        android:dividerHeight="0.6dp"
+        android:layout_below="@+id/profilebox"
+        ></ListView>
 
 </RelativeLayout>

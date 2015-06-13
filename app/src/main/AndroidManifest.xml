@@ -48,6 +48,7 @@
         <activity android:name=".Views.SignInActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".Views.DefaultActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".Views.CreatePostActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".Views.UserProfileActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

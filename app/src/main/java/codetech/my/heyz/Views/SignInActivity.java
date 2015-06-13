@@ -6,7 +6,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 
+
 import codetech.my.heyz.R;
+
+//import com.huawei.*;
 
 /**
  * Created by kamarulzaman on 6/13/15.

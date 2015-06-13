@@ -5,14 +5,16 @@ package codetech.my.heyz.Adapter;
  */
 public class TimelinePersonArray {
     private String mId, mName, mStatus, mAvatar, mDateTime, mDistance;
+    private boolean isSelf;
 
-    public TimelinePersonArray(String mId, String mName, String mStatus, String mAvatar, String mDateTime, String mDistance) {
+    public TimelinePersonArray(String mId, String mName, String mStatus, String mAvatar, String mDateTime, String mDistance, boolean isSelf) {
         this.mId = mId;
         this.mName = mName;
         this.mStatus = mStatus;
         this.mAvatar = mAvatar;
         this.mDateTime = mDateTime;
         this.mDistance = mDistance;
+        this.isSelf = isSelf;
     }
 
     public String getmId(){
@@ -34,6 +36,8 @@ public class TimelinePersonArray {
     public String getDateTime(){ return this.mDateTime;  }
 
     public String getDistance(){ return this.mDistance; }
+
+    public boolean getisSelf() { return this.isSelf; }
 
 
 }
