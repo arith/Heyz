@@ -15,7 +15,7 @@ public class DefaultFactory {
     public static final String mMyPhoneNumber = "+601546010184";
     public static final String mMyPassword = "Huawei1234";
 
-    public static final String mApiUrl = "http://172.28.1.149/heyz/api.php";
+    public static final String mApiUrl = "http://sudo.my/gcm/api.php";
     SharedPreferences sharedpref;
     Context context;
 

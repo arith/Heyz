@@ -140,11 +140,11 @@ public class UserProfileActivity extends ActionBarActivity {
 
         adapter = new ProfileTimeLineAdapter(getApplicationContext(), items);
         lview.setAdapter(adapter);
-        Button mButton = (Button) findViewById(R.id.addHeyz);
+        final Button mButton = (Button) findViewById(R.id.addHeyz);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), CreatePostActivity.class));
+                mButton.setText("Make a free call");
             }
         });
     }
