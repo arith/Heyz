@@ -112,7 +112,7 @@ public class UserProfileActivity extends ActionBarActivity {
         params2.add("userid", muserid);
         client2.post(DefaultFactory.mApiUrl, params2, new JsonHttpResponseHandler() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+            public void onSuccess(int statusCode, Header[] headers, final JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 try{
                     if(response.getBoolean("response")) {
@@ -121,6 +121,25 @@ public class UserProfileActivity extends ActionBarActivity {
                         mText.setText(response.getString("fullname"));
                         TextView mStatus = (TextView) findViewById(R.id.mStatus);
                         mStatus.setText(response.getString("status"));
+
+                        final Button mButton = (Button) findViewById(R.id.addHeyz);
+                        mButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if(mButton.getText().equals("Make a free call")) {
+                                    try{
+                                        Intent startcall = new Intent(getApplicationContext(), CallPersonActivity.class);
+                                        startcall.putExtra("mName", response.getString("fullname"));
+                                        startcall.putExtra("mAvatar", response.getString("avatar"));
+                                        startActivity(startcall);
+                                    } catch(Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                } else {
+                                    mButton.setText("Make a free call");
+                                }
+                            }
+                        });
                     } else {
                         Toast.makeText(getApplicationContext(), "Getting profile info failed", Toast.LENGTH_SHORT).show();
                     }
@@ -140,12 +159,6 @@ public class UserProfileActivity extends ActionBarActivity {
 
         adapter = new ProfileTimeLineAdapter(getApplicationContext(), items);
         lview.setAdapter(adapter);
-        final Button mButton = (Button) findViewById(R.id.addHeyz);
-        mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mButton.setText("Make a free call");
-            }
-        });
+
     }
 }

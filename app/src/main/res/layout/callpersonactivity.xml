@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000"
+    >
+
+    <LinearLayout
+        android:visibility="visible"
+        android:layout_marginTop="100dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ongoing call"
+            android:textSize="16sp"
+            android:textColor="#80FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/mStatus"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arith Awesome"
+            android:textSize="28sp"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/mName"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: 03:21"
+            android:textSize="14sp"
+            android:textColor="#80FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/mTime"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            />
+
+        <ImageView
+
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/mAvatar"
+            android:layout_marginBottom="10dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/stopcall"
+                android:id="@+id/mStopCall"
+                />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+</RelativeLayout>

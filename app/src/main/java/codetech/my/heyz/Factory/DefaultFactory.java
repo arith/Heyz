@@ -47,4 +47,40 @@ public class DefaultFactory {
             //do nothing
         }
     }
+
+    public String getUserAvatar() {
+        try{
+            return sharedpref.getString("avatar", "0");
+        } catch(Exception e) {
+            return "0";
+        }
+    }
+
+    public void setUserAvatar(String avatar) {
+        try{
+            SharedPreferences.Editor edit = sharedpref.edit();
+            edit.putString("avatar", avatar);
+            edit.commit();
+        } catch(Exception e) {
+            //do nothing
+        }
+    }
+
+    public String getUserName() {
+        try{
+            return sharedpref.getString("name", "0");
+        } catch(Exception e) {
+            return "0";
+        }
+    }
+
+    public void setUserName(String avatar) {
+        try{
+            SharedPreferences.Editor edit = sharedpref.edit();
+            edit.putString("name", avatar);
+            edit.commit();
+        } catch(Exception e) {
+            //do nothing
+        }
+    }
 }

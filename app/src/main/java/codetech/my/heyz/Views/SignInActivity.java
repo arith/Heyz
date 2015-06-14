@@ -35,6 +35,9 @@ public class SignInActivity extends ActionBarActivity {
         setContentView(R.layout.signinactivity);
         mFactory = new DefaultFactory(getApplicationContext());
         mFactory.setUserId("0");
+        mFactory.setUserAvatar("0");
+        mFactory.setUserName("0");
+
 
         final EditText mUsername = (EditText) findViewById(R.id.inputUsername);
         final EditText mPassword = (EditText) findViewById(R.id.inputPassword);
@@ -56,6 +59,8 @@ public class SignInActivity extends ActionBarActivity {
                         try{
                             if(response.getBoolean("response")) {
                                 mFactory.setUserId(response.getString("userid"));
+                                mFactory.setUserName(response.getString("fullname"));
+                                mFactory.setUserAvatar(response.getString("avatar"));
                                 startActivity(new Intent(getApplicationContext(), DefaultActivity.class));
                             } else {
                                 Toast.makeText(getApplicationContext(), "Wrong username or password", Toast.LENGTH_SHORT).show();
