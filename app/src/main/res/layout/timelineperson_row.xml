@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/mId" android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp"
+        android:id="@+id/mAvatar"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/mAvatar"
+        android:id="@+id/mName"
+        android:textSize="16sp"
+        android:textColor="#6e6e6e"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/mAvatar"
+        android:id="@+id/mStatus"
+        android:layout_below="@+id/mName"
+        android:textSize="13sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/mName"
+        android:id="@+id/mDateTime"
+        android:textSize="12sp"
+        android:textColor="#bdbdbd"
+        android:layout_marginRight="8dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:id="@+id/mDistance"
+        android:textSize="12sp"
+        android:textColor="#bdbdbd"
+        android:layout_alignBaseline="@+id/mName"
+        android:background="@drawable/distance_circle"
+        android:layout_marginTop="4dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/mAvatar"
+        android:layout_below="@+id/mStatus"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subang Jaya"
+            android:id="@+id/mLocation"
+            android:textSize="12sp"
+            android:textColor="#546e7a"
+            android:layout_marginTop="2dp"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
